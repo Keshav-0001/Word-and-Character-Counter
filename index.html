@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+        <h1 id="header">Word and Character Count</h1>
+        <textarea name="" id="area" cols="30" rows="20"></textarea>
+        <p> Words are
+             <span id="word">0</span> and characters are
+              <span id="char">0</span></p>
+
+    </div>
+<script >
+
+let textbox = document.getElementById("area");
+
+textbox.addEventListener("input",function(){
+
+    var text = this.value;
+    let char = text.length;
+    document.getElementById("char").innerHTML=char;
+
+text = text.trim();
+let word = text.split(" ");
+let cleanList = word.filter(function(keshav){
+
+    return keshav!= "";
+
+
+})
+document.getElementById("word").innerHTML=cleanList.length;
+
+
+
+})
+
+
+
+
+    </script>
+</body>
+
+</html>
